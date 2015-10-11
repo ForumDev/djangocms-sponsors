@@ -1,0 +1,10 @@
+{% load sekizai_tags %}
+{% addtoblock "css" %}<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/patrons.css"></script>{% endaddtoblock %}
+
+<div class="patrons">
+    {% for sponsor in sponsors %}
+        {% if site in sponsor.sites.all %} 
+            <a class="" href="{{ sponsor.url }}"><img src="{{ sponsor.image.url }}" style="height:50px;"></a>
+        {% endif %}
+    {% endfor %}
+</div>
